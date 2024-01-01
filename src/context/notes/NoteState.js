@@ -7,7 +7,7 @@ const NoteState = (props) => {
   const [tags, setTags] = useState("");
   const [tagchange, setTagchange] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
-  const host = "http://localhost:5000";
+
   const [time, setTime] = useState("");
 
   // fetching all daily tasks
@@ -26,7 +26,7 @@ const NoteState = (props) => {
 
   // fetch monthly tasks
   const getMonthly = async () => {
-    const response = await fetch(`${host}/api/notes/fetchallmonthly`, {
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/fetchallmonthly`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
 
   // fetch yearly tasks
   const getYearly = async () => {
-    const response = await fetch(`${host}/api/notes/fetchallyearly`, {
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/fetchallyearly`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -54,8 +54,8 @@ const NoteState = (props) => {
 
   //add daily task
   const addNote = async (title, description, tag, deadline, deadlinetime) => {
-    const host = "http://localhost:5000";
-    const response = await fetch(`${host}/api/notes/addnote/`, {
+
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/addnote/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,8 +78,8 @@ const NoteState = (props) => {
     deadline,
     deadlinetime
   ) => {
-    const host = "http://localhost:5000";
-    const response = await fetch(`${host}/api/notes/addMonthlytask/`, {
+
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/addMonthlytask/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -97,8 +97,8 @@ const NoteState = (props) => {
 
   // add yearly
   const addYearly = async (title, description, tag, deadline, deadlinetime) => {
-    const host = "http://localhost:5000";
-    const response = await fetch(`${host}/api/notes/addyearlytask/`, {
+ 
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/addyearlytask/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -115,8 +115,8 @@ const NoteState = (props) => {
   };
   // Delete daily tasks
   const deleteNote = async (id) => {
-    const host = "http://localhost:5000";
-    const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+  
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/deletenote/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -133,8 +133,8 @@ const NoteState = (props) => {
 
   // delete monthly tasks
   const deleteMonthly = async (id) => {
-    const host = "http://localhost:5000";
-    const response = await fetch(`${host}/api/notes/deleteMonthly/${id}`, {
+    
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/deleteMonthly/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -152,8 +152,8 @@ const NoteState = (props) => {
 
   // delete yearly tasks
   const deleteYearly = async (id) => {
-    const host = "http://localhost:5000";
-    const response = await fetch(`${host}/api/notes/deleteYearly/${id}`, {
+  
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/deleteYearly/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -171,13 +171,13 @@ const NoteState = (props) => {
 
   // edit daily tasks
   const editNote = async (id, title, description, tag) => {
-    const host = "http://localhost:5000";
+ 
     const data = {
       title: title,
       description: description,
       tag: tag,
     };
-    const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/updatenote/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -204,13 +204,13 @@ const NoteState = (props) => {
 
   // edit monthly tasks
   const editMonthly = async (id, title, description, tag) => {
-    const host = "http://localhost:5000";
+
     const data = {
       title: title,
       description: description,
       tag: tag,
     };
-    const response = await fetch(`${host}/api/notes/updateMonthly/${id}`, {
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/updateMonthly/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -237,13 +237,13 @@ const NoteState = (props) => {
 
   // edit Yearly tasks
   const editYearly = async (id, title, description, tag) => {
-    const host = "http://localhost:5000";
+  
     const data = {
       title: title,
       description: description,
       tag: tag,
     };
-    const response = await fetch(`${host}/api/notes/updateYearly/${id}`, {
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/updateYearly/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
