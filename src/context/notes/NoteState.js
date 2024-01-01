@@ -12,7 +12,7 @@ const NoteState = (props) => {
 
   // fetching all daily tasks
   const getNotes = async () => {
-    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+    const response = await fetch(`https://backendtodo-dbql.onrender.com/api/notes/fetchallnotes`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
